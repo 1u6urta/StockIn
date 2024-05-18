@@ -1,0 +1,410 @@
+/* LES FONTS */
+@font-face {
+    font-family: "Rubik";
+    src: url('../fonts/Rubik/Rubik-Regular.ttf');
+    font-style: normal;
+}
+
+:root {
+    --colorP: #dd3f16;
+    --colorS: #4CAF50;
+    --colortxt: #F5F5F5;
+    --colorbg: #000000;
+}
+
+/* FIN DES FONTS */
+
+/* LES COULEURS */
+/* BLUE -> #233142 */
+/* PRIMARY -> #007bff */
+/*# FIN LES COULEURS #*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Rubik", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    background: #ffffff;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+
+/***************************************** LA NAVBAR*****************************************/
+.navbar {
+    background-color: var(--colorbg);
+    padding: 0.1rem 1rem !important;
+    
+}
+
+.presentation-title h3{
+    margin: 20px 0 ;
+    font-size: 2.5rem;
+}
+.navbar-nav .nav-link {
+    font-weight: bold;
+    margin-right: .25rem;
+    color: var(--colortxt);
+}
+
+.logo {
+    color: var(--colorP);
+    font-weight: bold;
+}
+
+.red {
+    color: var(--colorS);
+    font-size: 19pt;
+}
+.Logo{
+    margin-left : 20px;
+}
+
+.btn-primary {
+    background-color: var(--colorS) !important;
+    border: solid 1px var(--colorS);
+    color: var(--colorbg) !important;
+}
+
+.home {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+}
+.cercle {
+    background-color: var(--colorP);
+    border-radius: 50%;
+    position: absolute;
+}
+.rectongle {
+    background-color: var(--colortxt);
+}
+.cercle1 {
+    width: 100px;
+    height: 100px;
+    top: 0px;
+    left: 50px;
+}
+.cercle2 {
+    width: 25px;
+    height: 25px;
+    top: 95px;
+    left: 125px;
+}
+.cercle3 {
+    width: 500px;
+    height: 500px;
+    top: 418px;
+    z-index: -2;
+    left: -360px;
+}
+.cercle4 {
+    width: 125px;
+    height: 125px;
+    top: 751px;
+    left: 1150;
+    z-index: -1;
+}
+.form {
+    position: absolute;
+    z-index: -1;
+}
+
+.text {
+    width: 40%;
+}
+
+.homeimg {
+    width: 50%;
+}
+.phome {
+    text-align: justify;
+}
+.homeimg img {
+    width: 675px;
+    height: 500px;
+    border-radius: 5px;
+}
+.block{
+    display: block;
+
+}
+
+.btnop {
+    background-color: var(--colorS);
+    border: solid 1px var(--colorS);
+    color: var(--colorbg);
+    font-weight : bold;
+    justify-self: center;
+}
+
+.btnop:hover {
+    background-color: var(--colorS) !important;
+    border: solid 1px var(--colorP) !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.container-login {
+    max-width: 350px;
+    margin-left: 375px;
+    margin-top: 60px;
+
+}
+.container-about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+.container-about  p {
+    text-align: justify;
+}
+.container-about h2{
+    margin-bottom: 10px;
+}
+
+.about-section h2 {
+    color: var(--colorbg);
+}
+
+.about-section p {
+    color: var(--colorbg);
+    line-height: 1.6;
+}
+
+
+.site-footer {
+    background-color: var(--colorbg);
+    color: var(--colortxt);
+    text-align: left;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.footer-info,
+.footer-links {
+    flex: 1;
+}
+
+.footer-info h3,
+.footer-links h3 {
+    color: var(--colorS);
+    /* Un jaune pour le contraste */
+}
+
+
+.footer-info ul,
+.footer-links ul {
+    list-style-type: none;
+   margin-left: 20px;
+}
+.footer-links ul{
+    margin-left: 50px;
+}
+
+.footer-info ul li,
+.footer-links ul li {
+    padding: 5px 0;
+}
+
+.footer-info ul li a,
+.footer-links ul li a {
+    color: var(--colorP);
+    text-decoration: none;
+}
+
+.footer-info ul li a:hover,
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+/***************** LE CONTAINER ****************/
+.container {
+    margin-top: 60px;
+    padding-top: 15px;
+}
+
+
+
+span.title-voyager {
+    font-weight: bold;
+}
+
+.card {
+    max-width: 250px;
+}
+.card-img {
+    height: 180px;
+    max-height: 180px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.card-price {
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    background: var(--colorP);
+    padding: 3px 6px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    box-shadow: 2px 5px 10px #313a4626;
+}
+
+.card-price::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-bottom: solid 10px transparent;
+    border-right: solid 10px var(--colorP);
+}
+
+.card-montant {
+    letter-spacing: 2px;
+}
+
+.card-montant::before {
+    content: "";
+    border-top: 20px solid var(--colorP);
+    border-right: 21px solid transparent;
+    position: absolute;
+    top: 0;
+    right: -20px;
+}
+
+.card-montant::after {
+    content: "";
+    border-bottom: 20px solid var(--colorP);
+    border-right: 20px solid transparent;
+    position: absolute;
+    bottom: 0;
+    right: -19px;
+}
+
+
+.modal-body p {
+    font-size: 16px !important;
+    font-style: normal !important;
+}
+.site-footer p {
+    text-align: center; 
+    margin: 10px 0; 
+  }
+.footer-info, .footer-links {
+    margin-left: 191px; 
+  }
+  
+.d-none {
+    display: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 110px;
+    left: -70px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: var(--colorbg);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.container-about h2 {
+    color:var(--colorbg);
+}
+.container-about .title {
+    color: var(--colorP) ;
+    font-size: x-large;
+}
+.container-about .title .red {
+    font-size: x-large;
+}
+.table {
+    width: 90% !important;
+    margin-bottom: 1rem;
+    margin-left: 5% !important;
+    color: #212529;
+}
+
+/********************************** MEDIA QUIRES *********************************
+
+@media only screen and (min-width: 992px){
+    .navbar-administration{
+        max-height: 56px !important;
+        height: 56px !important;
+    }
+
+}
+@media only screen and (max-width: 992px){
+    .container{
+        padding-top: 35px;
+        
+    }
+    .navbar-nav{
+        text-align: center;
+    }
+    .navbar-nav .nav-link{
+        margin-right: 0;
+    }
+    .btn-sing-in-navbar{
+        margin-right: 0 !important;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }    
+    .btn-log-in-navbar{
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (max-width: 576px){
+/* style consultation séjour 
+.img-consultation{
+    height: auto;
+}
+/*## fin style des tables listes des offres 
+} */

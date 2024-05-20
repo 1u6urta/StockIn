@@ -99,63 +99,74 @@ if (panierRecupere && panierRecupere.length > 0) {
         document.getElementById('panier').appendChild(newRow);
     }
 }
+</script>
+<script>
+    function envoyerDonneesVersPHP() {
+        var panier = JSON.parse(localStorage.getItem('panier'));
+        var sommesPrixParId = [];
 
-async function envoyerDonneesVersPHP() {
-    var panier = JSON.parse(localStorage.getItem('panier'));
+        let aggregatedArray = {};
 
-    var sommesPrixParId = {};
-    
-    panier.forEach(function(produit) {
-        var id = produit.id;
-        var prix = produit.prix;
-
-        if (id in sommesPrixParId) {
-            sommesPrixParId[id] += prix;
-        } else { 
-            sommesPrixParId[id] = prix;
-        }
-    });
-
-    var data = Object.entries(sommesPrixParId).map(([id, prix]) => ({ id, prix }));
-
-    var options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    };
-
-    // Retourner la promesse
-    return fetch('assets/compos/traitement_commande.php', options);
-}
-
-// Lier la fonction à l'événement clic du bouton
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('envoyerDonnees').addEventListener('click', async function() {
-        try {
-            // Attendre la résolution de la promesse retournée par envoyerDonneesVersPHP
-            const response = await envoyerDonneesVersPHP();
-            console.log(response);
-
-            // Vérifier si la réponse est OK
-            if (response.ok) {
-                // Traiter la réponse JSON
-                const responseData = await response.json();
-                console.log('Réponse du serveur:', responseData);
-
-                // Effectuer des actions supplémentaires en fonction de la réponse
-                // Par exemple, rediriger l'utilisateur vers une autre page
-                // window.location.href = 'nouvelle_page.php';
+        // Iterate over the original array
+        panier.forEach(item => {
+            // Check if the ID already exists in the aggregated array
+            if (aggregatedArray[item.id]) {
+                // If it exists, add the price to the existing total
+                aggregatedArray[item.id].prix += item.prix;
             } else {
-                // Si la réponse n'est pas OK, afficher un message d'erreur
-                console.error('La requête a échoué avec le statut:', response.status);
+                // If it doesn't exist, create a new entry with the ID and price
+                aggregatedArray[item.id] = {
+                    id: item.id,
+                    prix: item.prix
+                };
             }
-        } catch (error) {
-            // Si une erreur se produit lors de l'envoi de la requête ou du traitement de la réponse
-            console.error('Erreur lors de lenvoi des données:', error);
-        }
-    });
-});
+        });
+        
+        // panier.forEach(function(produit) {
+        //     var id = produit.id;
+        //     var prix = produit.prix;
 
+        //     if (id in sommesPrixParId) {
+        //         sommesPrixParId[id] += prix;
+        //     } else { 
+        //         sommesPrixParId[id] = prix;
+        //     }
+        // });
+       
+        aggregatedArray = Object.values(aggregatedArray)
+        console.log(aggregatedArray);
+        
+        // Envoyer les données à votre serveur PHP pour traitement
+        fetch('assets/compos/traitement_commande.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(aggregatedArray)
+        }).then(response => {
+            if (!response.ok) {
+                console.log(response)
+                throw new Error('Erreur lors de l\'envoi des données.');
+            }
+            console.log(response)
+            return response.json();
+        })
+        .then(data => {
+            console.log('Réponse du serveur :', data);
+            localStorage.removeItem('panier');
+            window.location.reload();
+        })
+        .catch(error => {
+            console.error('Erreur:', error);
+        });
+
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("envoyerDonnees").addEventListener("click", function(event) {
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+            
+            envoyerDonneesVersPHP(); // Appelle la fonction pour envoyer les données vers PHP
+        });
+    });
 </script>

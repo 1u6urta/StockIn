@@ -1,7 +1,68 @@
-<?php
-    include 'assets/compos/database.php';
-    include 'assets/compos/header.php';
-?>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- le titre -->
+    <title></title>
+    <!-- LES STYLES -->
+    <link rel="stylesheet" href="<?php echo $admin;?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo $admin;?>assets/css/datepicker.css">
+    <link rel="stylesheet" href="<?php echo $admin;?>assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="<?php echo $admin;?>assets/css/all.min.css">
+    <!-- FIN LES STYLES -->
+</head>
+
+<body>
+
+    <!------------------------------- LE HEADER ------------------------------->
+    <header class="header">
+
+        <!--------------- LA NAVBAR --------------->
+        <nav class="navbar navbar-administration navbar-expand-lg fixed-top shadow">
+            <!-- logo de la navbar -->
+            <a class="navbar-brand" href="#"><h1 class="Logo" > Stock<span class="red">In</span></h1></a>
+            <!-- logo de la navbar -->
+
+            <!-- boutton toggler -->
+            <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- lien de la navbar collapse -->
+            <div class="collapse navbar-collapse " id="navbarCollapse">
+                <ul class="navbar-nav  ml-auto flex-nowrap ">
+                    <li class="nav-item mr-5">
+                        <a class="nav-link  active" href="#">Accueil</a>
+                    </li>
+                    <li class="nav-item mr-5">
+                        <a class="nav-link" href="#">Produits</a>
+                    </li>
+                    <li class="nav-item mr-5">
+                        <a class="nav-link" href="#">À propos</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse " id="navbarCollapse">
+                <ul class="navbar-nav  ml-auto flex-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light btn-sm text-dark btn-sing-in-navbar" href="#">
+                            Sign up
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary btn-sm text-white btn-log-in-navbar " href="#">
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
     <section class="home">
         <div class="cercle cercle1"></div>
         <div class="cercle cercle2"></div>
@@ -27,7 +88,7 @@
                     <h3>Nos idées pour <span class="title-voyager">Produit</span></h3>
                 </div>
             </div>
-
+<!-- 
             <?php 
                 $sql = "SELECT * FROM `produit` LIMIT 4 OFFSET 4";
                 $result = mysqli_query($conn, $sql);
@@ -53,7 +114,7 @@
             <?php
                 }
             }
-            ?>
+            ?> -->
             <!-- afficher tout les séjours -->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="text-center mt-5 mb-5">

@@ -3,7 +3,7 @@
           <div class="footer-info">
             <h3>Contactez-nous</h3>
             <ul>
-              <li>Téléphone : <a href="tel:+1234567890">+213 791996321</a></li>
+              <li>Téléphone : <a href="tel:+1234567890">+213 7999999</a></li>
               <li>Email : <a href="StockIn@Mywebsite.com">StockIn@Mywebsite.com</a></li>
               <li>Adresse : Bastos - Tizi ouzou - Algerie </li>
             </ul>
